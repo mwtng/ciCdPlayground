@@ -19,25 +19,6 @@ jobs:
       - name: Run unit tests
         run: yarn test
     
-      - name: JUnit reports
-        uses: xportation/junit-coverage-report@v1.0.3
-        with:
-          junit-path: reports/*.xml
-          
-  E2Etests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4.2.2
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v3.9.1
-        with:
-          node-version: '20'
-    
-      - name: Install dependencies
-        run: yarn install
-    
       - name: Build and deploy
         run: |
           yarn build
@@ -47,3 +28,4 @@ jobs:
         uses: xportation/junit-coverage-report@v1.0.3
         with:
           junit-path: reports/*.xml
+        if: always()
