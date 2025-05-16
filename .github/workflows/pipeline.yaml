@@ -25,7 +25,7 @@ jobs:
           yarn test:e2e
 
       - name: JUnit reports
-        uses: xportation/junit-coverage-report@v1.0.3
+        uses: mikepenz/action-junit-report@v5.2.0
         with:
-          junit-path: reports/*.xml
+          report_paths: reports/*.xml
         if: always()
