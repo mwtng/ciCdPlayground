@@ -2,7 +2,7 @@ name: "test_everything"
 on: [push, workflow_dispatch]
 
 jobs:
-  checkout:
+  Pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
